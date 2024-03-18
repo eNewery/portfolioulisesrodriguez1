@@ -1,16 +1,16 @@
 "use client"
 import React, {useEffect} from "react";
-const Header = ({setIsModal, isModal}) => {
+const Header = ({setIsNavbar, isNavbar}) => {
     function setNavbar() {
         const navbar = document.querySelector(".navbarContainer")
-        if (isModal === true) {
+        if (isNavbar === true) {
             navbar.style.animation = "navbarDiss 1s both"
             setTimeout(() => {
-                setIsModal(false)
+                setIsNavbar(false)
             }, 1000);
         }
-        if(isModal === false){
-            setIsModal(true)
+        if(isNavbar === false){
+            setIsNavbar(true)
         }
     }
     useEffect(() => {

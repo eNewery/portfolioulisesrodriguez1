@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-const Portfolio = () => {
+const Portfolio = ({turnModalOn, proj}) => {
     const [link, setLink] = useState("all")
     const [projects, setProjects] = useState([])
     useEffect(() => {
@@ -20,35 +20,7 @@ if (link === "works") {
     }, [link])
 
 
-const proj = [{
-projectImage:"./projectCrushHub.png",
-projectTitle:"Crush Hub",
-category:"personal",
-figmaLink:"https://www.figma.com/file/E7HzQT1PPWcaAECQJRJvku/Crush-Hub?type=design&mode=design&t=z4F2bz1ZNlYsFMTx-1",
-figma: true,
-icons: ["./reactNative.png", "./firebase.png"]
-}, {
-    projectImage:"./projectAnglo.png",
-    projectTitle:"Anglohispana",
-    category:"work",
-    figmaLink:"https://www.figma.com/file/vMor84JV0Bcpc4MbnjleV2/Anglo?type=design&mode=design&t=fNA8USqeDkOunrUn-1",
-    figma: true,
-    icons: ["./react.png", "./firebase.png"]
-}, {
-    projectImage:"./projectVet.png",
-    projectTitle:"Vet App",
-    category:"work",
-    figmaLink:"https://www.figma.com/file/qjcdKB5P1eRuqUqqp5duXZ/Vet-App?type=design&mode=design&t=fNA8USqeDkOunrUn-1",
-    figma: true,
-    icons: ["./react.png", "./reactNative.png", "./firebase.png"]
-},
-{
-    projectImage:"./projectGameville.png",
-    projectTitle:"Panel CMS",
-    category:"work",
-figma:false,
-icons: ["./react.png", "./firebase.png"]
-}]
+
     return(
         <div id="portfolio" className="portfolioContainer">
       <div style={{marginTop:96}} className="portfolioSubtitleContainer">
@@ -63,7 +35,7 @@ icons: ["./react.png", "./firebase.png"]
       </div>
       <div className="portfolioCardsContainer">
         {projects.map(item => (
-                    <div className="portfolioCard"><img src={item.projectImage} alt="" /><p className="cardText">{item.projectTitle}{item.figma === true ? <Link target="_blank" href={item.figmaLink}><img src="./figma.png"/></Link> : ""}</p><div className="cardIcons">{item.icons.map(item => (<img src={item} alt="" />))}</div></div>
+                    <div className="portfolioCard"><img src={item.projectImage} alt="" /><p className="cardText">{item.projectTitle}<div style={{display:"flex"}}>{item.figma === true ? <Link target="_blank" href={item.figmaLink}><img src="./figma.png"/></Link> : ""}</div></p><div className="cardIcons">{item.icons.map(item => (<img src={item} alt="" />))}<img onClick={() => turnModalOn(item)} style={{cursor:"pointer", backgroundColor:"#212121", position:"absolute", top:8, right:8, width:32, height:32}} src="./details.png" alt="" /></div></div>
         ))}
       </div>
         </div>

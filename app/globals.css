@@ -47,6 +47,16 @@ font-size: 32px;
 }
 /* GENERAL CLASSES */
 
+/* LOGIN */
+
+.loginContainer{
+background-color: #F5DF4E;
+height: 100vh;
+width: 100%;
+}
+
+/* LOGIN */
+
 /* NAVBAR */
 
 .navbarContainer{
@@ -63,12 +73,12 @@ color: white;
 animation: navbarAppear 1s both;
 }
 @keyframes navbarAppear {
-  0%{transform: translateX(-100vw);}
-  100%{transform: translateX(0);}
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 @keyframes navbarDiss {
-  0%{transform: translateX(0);}
-  100%{transform: translateX(-100vw);}
+  0%{opacity: 1;}
+  100%{opacity: 0;}
 }
 
 .navLinks{
@@ -112,6 +122,65 @@ transition: 0.5s;
   transition:0.3s;
 }
 /* NAVBAR */
+
+/* MODAL */
+
+.modalContainer{
+height: 100vh;
+width: 100%;
+position: fixed;
+background-color: rgba(0, 0, 0, 0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 30;
+animation: modalAppear 0.3s both;
+}
+@keyframes modalAppear {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes modalDisappear {
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+.modalContent{
+background-color: #212429;
+border-radius:1em;
+position: relative;
+width: 25%;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1em;
+z-index: 50;
+position: relative;
+}
+.modalContent h2{
+  margin-top: 1em;
+  color: #F5DF4E;
+  font-size: 24px;
+}
+.modalContent img{
+  border-radius: 1em;
+}
+.projectDescriptionContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.projectDescription{
+  color:#F5DF4E;
+  text-align: center;
+  width: 50%;
+}
+.projectTech{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+/* MODAL */
 
 
 /* HEADER */
@@ -228,15 +297,15 @@ transition:0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 368px;
+  height: 340px;
   }
 .landingRightBox{
-  width: 368px;
+  width: 310px;
   background-color: #212429;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 2.5em;
+  border-radius: 3.5em;
   box-shadow: 0 4px 8px 10px rgba(1, 1, 1, 0.447);
   box-shadow: inset 0px 0 0 0 #333A40;
   animation: openLandingBox 1s both; /* La animación ocurre cuando el mouse pasa por encima */
@@ -359,7 +428,7 @@ gap: 1em;
 }
 .aboutBox{
   background-color: #212429;
-  width: 248px;
+  width: 258px;
   height: 50px;
   position: relative;
   display: flex;
@@ -500,6 +569,7 @@ align-items: center;
 transition:0.3s;
 background-color: rgba(1, 1, 1, 0);
 position: relative;
+z-index: 11;
 }
 .portfolioCard::after{
   content: "";
@@ -575,7 +645,7 @@ flex-direction: column;
 justify-content: start;
 align-items: center;
 background-color: #212429;
-margin-top: 1em;
+margin-top: 2em;
 }
 
 .clientsSubtitleContainer{
@@ -650,12 +720,16 @@ align-items: center;
 }
 .leftContactContainer h3, h2{
   font-size: 42px;
+  margin-top: 1em;
 }
 .rightContactContainer{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.rightContactContainer h2{
+  margin-top: 1em;
 }
 .rightContactContainer label{
   font-size: 24px;
@@ -696,6 +770,27 @@ textarea{
 
 @media (max-width:1200px) {
 
+/* MODAL 1200 */
+.modalContent{
+  width: 30%;
+}
+.projectDescription{
+  width: 80%;
+}
+
+/* MODAL 1200 */
+
+
+/* ABOUT 1200 */
+
+.aboutLeftSectionContainer p{
+  width: 100%;
+}
+
+/* ABOUT 1200 */
+
+
+
   /* What I Do 1200 */
 .idoCardsContainer{
   grid-template-columns: 1fr;
@@ -718,6 +813,65 @@ textarea{
 
 /* MEDIA QUERIES 1200 */
 
+/* MEDIA QUERIES 1000 */
+
+@media (max-width:1000px) {
+  
+/* MODAL 1000 */
+.modalContent{
+  width: 40%;
+}
+.projectDescription{
+  width: 80%;
+}
+
+/* MODAL 1000 */
+
+/* ABOUT 1000 */
+
+.aboutSectionsContainer{
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0;
+}
+.aboutLeftSectionContainer{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.aboutLeftSectionContainer p{
+  width: 80%;
+}
+.aboutBoxesContainer{
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutBox{
+  width: 80%;
+}
+/* ABOUT 1000 */
+
+/* CLIENTS SPEAK 1000 */
+
+.clientReview a{
+  width: 70%;
+  font-size: 24px;
+}
+
+/* CLIENTS SPEAK 1000 */
+
+
+
+
+}
+
+/* MEDIA QUERIES 1000 */
+
+
 /* MEDIA QUERIES 768 */
 
 
@@ -731,6 +885,15 @@ textarea{
 
 /* RESET CSS 768 */
 
+/* MODAL 768 */
+.modalContent{
+  width: 100%;
+}
+.projectDescription{
+  width: 50%;
+}
+
+/* MODAL 768 */
 
   /* GENERAL CLASSES 768 */
 .textMedium{
@@ -835,6 +998,7 @@ text-align: center;
 .clientReview a{
   color: white;
   width: 80%;
+  font-size: 16px;
   text-align: center;
 }
 
