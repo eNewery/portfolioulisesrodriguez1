@@ -12,15 +12,14 @@ function setAdminOn() {
             <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}} className="navbarContent">
             <div className="navLinks">
 
-            <Link style={{animation:"navbarIconFromLeft 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#landing">Home</Link>
-            <Link style={{animation:"navbarIconFromRight 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#about">About Me</Link>
-            <Link style={{animation:"navbarIconFromLeft 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#whatido">What I Do</Link>
-            <Link style={{animation:"navbarIconFromRight 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#portfolio">Portfolio</Link>
-            <Link style={{animation:"navbarIconFromLeft 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="/">Client Speak</Link>
-            <Link style={{animation:"navbarIconFromRight 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="/">Contact Me</Link>
+            <Link style={{animation:"navbarIcon 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#landing">Home</Link>
+            <Link style={{animation:"navbarIcon 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#about">About Me</Link>
+            <Link style={{animation:"navbarIcon 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#whatido">What I Do</Link>
+            <Link style={{animation:"navbarIcon 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="#portfolio">Portfolio</Link>
+            <Link style={{animation:"navbarIcon 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="/">Client Speak</Link>
+            <Link style={{animation:"navbarIcon 1s both", animationDelay:"1s"}} onClick={() => setIsNavbar(false)} href="/">Contact Me</Link>
             </div>
             </div>
-            <button style={{animation:"navbarIconFromRight 1s both", animationDelay:"1s", position:"fixed", bottom:16, backgroundColor:"#333a40", color:"white", width:200, height:50, border:"none", borderRadius:16, cursor:"pointer"}} onClick={() => setAdminOn()}>Admin</button>
 
         </div>
     )

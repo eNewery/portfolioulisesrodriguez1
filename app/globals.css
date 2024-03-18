@@ -96,9 +96,14 @@ animation: navbarAppear 1s both;
   font-weight: 700;
   animation-delay: 0.5s;
 background-color: #F5DF4E;
-padding: 0.5em 1em 0.5em 1em;
+padding: 0.5em 3em 0.5em 3em;
 border-radius: 1em;
 transition: 0.5s;
+}
+
+@keyframes navbarIcon {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
 @keyframes navbarIconFromLeft {
@@ -718,8 +723,10 @@ align-items: center;
   text-align: center;
   font-size: 32px;
 }
-.leftContactContainer h3, h2{
+.leftContactContainer h3{
   font-size: 42px;
+}
+.leftContactContainer h2{
   margin-top: 1em;
 }
 .rightContactContainer{
@@ -727,6 +734,7 @@ align-items: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 .rightContactContainer h2{
   margin-top: 1em;
